@@ -1,0 +1,50 @@
+import { TimelineItem } from "@/types";
+
+export const timeline: TimelineItem[] = [
+  {
+    id: "education-sou",
+    type: "education",
+    title: "Bachelor of Technology in Information Technology",
+    organization: "Silver Oak University, Ahmedabad",
+    description: "Pursuing B.Tech in IT with a CGPA of 8.31/10.0, focusing on full-stack web development and data structures & algorithms.",
+    startDate: "2022-08",
+    endDate: "2026-06",
+    current: true,
+  },
+  {
+    id: "project-chatapp",
+    type: "project",
+    title: "Built ChatApp",
+    organization: "Personal Project",
+    description: "Developed a real-time messaging platform using Socket.io, Next.js, and TypeScript with live read receipts and media sharing.",
+    startDate: "2025-08",
+    endDate: "2025-10",
+  },
+  {
+    id: "project-projectflow",
+    type: "project",
+    title: "Built ProjectFlow",
+    organization: "Personal Project",
+    description: "Architected a three-tier RBAC project management system with hierarchical task tracking and secure session management.",
+    startDate: "2025-11",
+    endDate: "2026-01",
+  },
+  {
+    id: "project-leetcode-clone",
+    type: "project",
+    title: "Building LeetCode Clone",
+    organization: "Personal Project",
+    description: "Building a full-stack coding practice platform with JWT authentication, RBAC, and a real-time leaderboard.",
+    startDate: "2026-01",
+    current: true,
+  },
+  {
+    id: "career-job-search",
+    type: "career",
+    title: "Actively Seeking Full Stack Developer Roles",
+    organization: "Job Search",
+    description: "Applying to full-stack and backend developer roles, focused on MERN stack and Next.js opportunities in Ahmedabad and remote.",
+    startDate: "2026-01",
+    current: true,
+  },
+];

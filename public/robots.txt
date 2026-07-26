@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://portfolio-one-livid-55.vercel.app/sitemap.xml
+Sitemap: https://portfolio-v2-rouge-theta.vercel.app/sitemap.xml

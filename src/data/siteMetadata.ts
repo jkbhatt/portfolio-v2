@@ -7,10 +7,10 @@ export const siteMetadata = {
   url: "https://portfolio-v2-rouge-theta.vercel.app",
   githubUrl: "https://github.com/jkbhatt",
   linkedinUrl: "https://linkedin.com/in/jaybhattdev",
-  email: "jkbhatt2005@gmail.com", 
+  email: "jkbhatt2005@gmail.com",
   location: "Ahmedabad, Gujarat, India",
   availability: "Open to Full Stack Developer roles",
-  resumeUrl: "/resume.pdf", 
+  resumeUrl: "/resume.pdf",
   keywords: [
     "Full Stack Developer",
     "MERN Stack Developer",

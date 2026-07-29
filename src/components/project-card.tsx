@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Code2, ExternalLink, ArrowUpRight } from "lucide-react";
 import { Project } from "@/types";
@@ -24,7 +25,19 @@ export function ProjectCard({
   project: Project;
   index: number;
 }) {
+  const router = useRouter();
   const status = statusConfig[project.status];
+
+  const handleCardClick = () => {
+    router.push(`/projects/${project.slug}`);
+  };
+
+  const handleCardKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      router.push(`/projects/${project.slug}`);
+    }
+  };
 
   return (
     <motion.div
@@ -32,7 +45,11 @@ export function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: (index % 3) * 0.08 }}
-      className="glass-card group relative flex flex-col overflow-hidden rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent-blue/40"
+      role="link"
+      tabIndex={0}
+      onClick={handleCardClick}
+      onKeyDown={handleCardKeyDown}
+      className="glass-card group relative flex cursor-pointer flex-col overflow-hidden rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent-blue/40"
     >
       {/* Top row: badges */}
       <div className="mb-4 flex items-center justify-between">
@@ -56,6 +73,7 @@ export function ProjectCard({
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
             aria-label={`${project.title} GitHub repository`}
             className="rounded-full p-1.5 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
           >
@@ -66,6 +84,7 @@ export function ProjectCard({
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               aria-label={`${project.title} live demo`}
               className="rounded-full p-1.5 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
             >
